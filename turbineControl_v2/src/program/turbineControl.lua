@@ -1,5 +1,5 @@
 -- Reactor- und Turbine control by Thor_s_Crafter --
--- Version 2.6 --
+-- Version 2.7-private-beta --
 -- Turbine control --
 
 --Loads the touchpoint API
@@ -900,17 +900,35 @@ function printStatsAuto(turbine)
     if lang == "de" then
         mon.write("Rotor Geschwindigkeit: ")
         mon.write((input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) .. " RPM   ")
-        mon.setCursorPos(2, 15)
+        mon.setCursorPos(2, 16)
         mon.write("RF-Produktion: " .. (input.formatNumber(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
+        if input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 1800 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1900 or input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 900 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1000 then
+            mon.setCursorPos(30, 15)
+            mon.setTextColor(colors.green)
+            mon write("Gut")
+        else 
+            mon.setCursorPos(30, 15)
+            mon.setTextColor(colors.red)
+            mon write("Schlecht")
+        end
+
     elseif lang == "en" then
         mon.write("Rotor Speed: ")
         mon.write((input.formatNumberComma(math.floor(t[turbine].getRotorSpeed()))) .. " RPM    ")
-        mon.setCursorPos(2, 15)
+        mon.setCursorPos(2, 16)
         mon.write("RF-Production: " .. (input.formatNumberComma(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
+        if input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 1800 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1900 or input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 900 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1000 then
+            mon.setCursorPos(30, 15)
+            mon.setTextColor(colors.green)
+            mon write("Good")
+        else 
+            mon.setCursorPos(30, 15)
+            mon.setTextColor(colors.red)
+            mon write("Bad")
     end
 
     --Internal buffer of the turbine
-    mon.setCursorPos(2, 16)
+    mon.setCursorPos(2, 17)
     if lang == "de" then
         mon.write("Interne Energie: ")
         mon.write(input.formatNumber(math.floor(getTurbineEnergy(turbine))) .. " RF          ")
@@ -918,6 +936,8 @@ function printStatsAuto(turbine)
         mon.write("Internal Energy: ")
         mon.write(input.formatNumberComma(math.floor(getTurbineEnergy(turbine))) .. " RF          ")
     end
+
+    
 
     --prints the current program version
     mon.setCursorPos(2, 25)
@@ -1050,3 +1070,4 @@ if overallMode == "auto" then
 elseif overallMode == "manual" then
     startManualMode()
 end
+
