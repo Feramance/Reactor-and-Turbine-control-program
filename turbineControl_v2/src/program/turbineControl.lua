@@ -919,11 +919,11 @@ function printStatsAuto(turbine)
         mon.setCursorPos(2, 16)
         mon.write("RF-Production: " .. (input.formatNumberComma(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
         if speed >= 1800 and speed <= 1900 then
-            mon.setCursorPos(28, 15)
+            mon.setCursorPos(27, 15)
             mon.setTextColor(colors.green)
             mon.write("Good")
         else 
-            mon.setCursorPos(28, 15)
+            mon.setCursorPos(27, 15)
             mon.setTextColor(colors.red)
             mon.write("Overspeed")
         end
