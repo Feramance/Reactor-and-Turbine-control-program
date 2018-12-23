@@ -910,7 +910,7 @@ function printStatsAuto(turbine)
         else 
             mon.setCursorPos(32, 15)
             mon.setTextColor(colors.red)
-            mon.write("Schlecht")
+            mon.write("Overspeed")
         end
 
     elseif lang == "en" then
@@ -925,7 +925,7 @@ function printStatsAuto(turbine)
         else 
             mon.setCursorPos(32, 15)
             mon.setTextColor(colors.red)
-            mon.write("Bad")
+            mon.write("Overspeed")
         end
     end
     mon.setTextColor(tonumber(textColor))
