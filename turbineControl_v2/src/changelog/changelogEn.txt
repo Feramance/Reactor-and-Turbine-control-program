@@ -1,7 +1,7 @@
 ****************************************************************
 -- Reactor- und Turbine control by Thor_s_Crafter --
 -- Complete Changelog --
--- Current Version: 2.6 --
+-- Current Version: 2.6.1 --
 ****************************************************************
 Version 2.6.1
 - Fixed not Rotor Speed Displaying.
