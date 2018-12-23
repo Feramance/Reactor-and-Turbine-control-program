@@ -100,7 +100,7 @@ function checkUpdates()
 
 	--Check current branch (release or beta)
 	local currBranch = ""
-	local tmpString = string.sub(version,5,5)
+	local tmpString = string.sub(version,7,7)
 	if tmpString == "" or tmpString == nil or tmpString == "r" then
 		currBranch = "master"
 	elseif tmpString == "b" then
