@@ -3,6 +3,9 @@
 -- Complete Changelog --
 -- Current Version: 2.6 --
 ****************************************************************
+Version 2.6.1
+- Fixed not Rotor Speed Displaying.
+****************************************************************
 Version 2.6
 - Removed Buttons for Mode Switch, Options and Reboot
 - Reactormode: Fuel Rods can now be set manually
