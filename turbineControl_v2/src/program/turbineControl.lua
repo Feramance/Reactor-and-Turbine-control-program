@@ -897,18 +897,18 @@ function printStatsAuto(turbine)
 
    --rotor speed/RF-production
     mon.setCursorPos(2, 15)
-    local speed = (input.formatNumberComma(math.floor(t[turbine].getRotorSpeed())))
+    local speed = math.floor(t[turbine].getRotorSpeed())
     if lang == "de" then
         mon.write("Rotor Geschwindigkeit: ")
         mon.write((input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) .. " RPM   ")
         mon.setCursorPos(2, 16)
         mon.write("RF-Produktion: " .. (input.formatNumber(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
         if speed >= 1800 and speed <= 1900 then
-            mon.setCursorPos(30, 15)
+            mon.setCursorPos(32, 15)
             mon.setTextColor(colors.green)
             mon.write("Gut")
         else 
-            mon.setCursorPos(30, 15)
+            mon.setCursorPos(32, 15)
             mon.setTextColor(colors.red)
             mon.write("Schlecht")
         end
@@ -919,15 +919,17 @@ function printStatsAuto(turbine)
         mon.setCursorPos(2, 16)
         mon.write("RF-Production: " .. (input.formatNumberComma(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
         if speed >= 1800 and speed <= 1900 then
-            mon.setCursorPos(30, 15)
+            mon.setCursorPos(32, 15)
             mon.setTextColor(colors.green)
             mon.write("Good")
         else 
-            mon.setCursorPos(30, 15)
+            mon.setCursorPos(32, 15)
             mon.setTextColor(colors.red)
             mon.write("Bad")
         end
     end
+    mon.setTextColor(tonumber(textColor))
+
 
 
     --Internal buffer of the turbine
