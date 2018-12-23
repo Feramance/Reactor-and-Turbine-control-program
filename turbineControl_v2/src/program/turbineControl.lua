@@ -926,6 +926,7 @@ function printStatsAuto(turbine)
             mon.setCursorPos(30, 15)
             mon.setTextColor(colors.red)
             mon.write("Bad")
+        end
     end
 
 
