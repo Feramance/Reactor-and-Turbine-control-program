@@ -904,7 +904,7 @@ function printStatsAuto(turbine)
         mon.setCursorPos(2, 16)
         mon.write("RF-Produktion: " .. (input.formatNumber(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
         if speed >= 1800 and speed <= 1900 then
-            mon.setCursorPos(35, 15)
+            mon.setCursorPos(34, 15)
             mon.setTextColor(colors.green)
             mon.write("Gut")
         else 
