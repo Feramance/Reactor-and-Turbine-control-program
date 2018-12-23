@@ -39,7 +39,7 @@ else
 end
 
 --Url for file downloads
-local relUrl = "https://raw.githubusercontent.com/ThorsCrafter/Reactor-and-Turbine-control-program/"..branch.."/turbineControl_v2/src/"
+local relUrl = "https://raw.githubusercontent.com/LennartKobosil/Reactor-and-Turbine-control-program/"..branch.."/turbineControl_v2/src/"
 
 
 --===== Functions =====
@@ -72,6 +72,7 @@ if not update then
   term.clear()
   term.setCursorPos(1,1)
   print("Reaktor- und Turbinenprogramm von Thor_s_Crafter")
+  print("Edited by DarkByteZero")
   print("Version 2.6")
   print()
   print("Ueber das Programm:")
