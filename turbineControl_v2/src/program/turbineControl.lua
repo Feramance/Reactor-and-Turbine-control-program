@@ -895,21 +895,22 @@ function printStatsAuto(turbine)
     end
     mon.setTextColor(tonumber(textColor))
 
-    --rotor speed/RF-production
+   --rotor speed/RF-production
     mon.setCursorPos(2, 15)
+    local speed = (input.formatNumberComma(math.floor(t[turbine].getRotorSpeed())))
     if lang == "de" then
         mon.write("Rotor Geschwindigkeit: ")
         mon.write((input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) .. " RPM   ")
         mon.setCursorPos(2, 16)
         mon.write("RF-Produktion: " .. (input.formatNumber(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
-        if input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 1800 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1900 then
+        if speed >= 1800 and speed <= 1900 then
             mon.setCursorPos(30, 15)
             mon.setTextColor(colors.green)
-            mon write("Gut")
+            mon.write("Gut")
         else 
             mon.setCursorPos(30, 15)
             mon.setTextColor(colors.red)
-            mon write("Schlecht")
+            mon.write("Schlecht")
         end
 
     elseif lang == "en" then
@@ -917,15 +918,16 @@ function printStatsAuto(turbine)
         mon.write((input.formatNumberComma(math.floor(t[turbine].getRotorSpeed()))) .. " RPM    ")
         mon.setCursorPos(2, 16)
         mon.write("RF-Production: " .. (input.formatNumberComma(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
-        if input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 1800 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1900 then
+        if speed >= 1800 and speed <= 1900 then
             mon.setCursorPos(30, 15)
             mon.setTextColor(colors.green)
-            mon write("Good")
+            mon.write("Good")
         else 
             mon.setCursorPos(30, 15)
             mon.setTextColor(colors.red)
-            mon write("Bad")
+            mon.write("Bad")
     end
+
 
     --Internal buffer of the turbine
     mon.setCursorPos(2, 17)
