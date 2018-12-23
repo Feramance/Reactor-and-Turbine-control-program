@@ -1,7 +1,10 @@
 ****************************************************************
 -- Reaktor- und Turbinenprogramm von Thor_s_Crafter --
 -- Komplettes Changelog -- 
--- Aktuelle Version: 2.6 --
+-- Aktuelle Version: 2.6.1 --
+****************************************************************
+Version 2.6.1
+- Der Rotor Speed wird nun angezeigt. 
 ****************************************************************
 Version 2.6
 - Buttons für Modus, Optionen und Neu Starten entfernt
