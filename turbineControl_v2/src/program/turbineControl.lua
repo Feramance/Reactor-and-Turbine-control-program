@@ -902,7 +902,7 @@ function printStatsAuto(turbine)
         mon.write((input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) .. " RPM   ")
         mon.setCursorPos(2, 16)
         mon.write("RF-Produktion: " .. (input.formatNumber(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
-        if input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 1800 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1900 or input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 900 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1000 then
+        if input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 1800 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1900 then
             mon.setCursorPos(30, 15)
             mon.setTextColor(colors.green)
             mon write("Gut")
@@ -917,7 +917,7 @@ function printStatsAuto(turbine)
         mon.write((input.formatNumberComma(math.floor(t[turbine].getRotorSpeed()))) .. " RPM    ")
         mon.setCursorPos(2, 16)
         mon.write("RF-Production: " .. (input.formatNumberComma(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
-        if input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 1800 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1900 or input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 900 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1000 then
+        if input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) >= 1800 and input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) <= 1900 then
             mon.setCursorPos(30, 15)
             mon.setTextColor(colors.green)
             mon write("Good")
