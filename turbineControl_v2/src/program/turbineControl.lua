@@ -900,17 +900,17 @@ function printStatsAuto(turbine)
     if lang == "de" then
         mon.write("Rotor Geschwindigkeit: ")
         mon.write((input.formatNumber(math.floor(t[turbine].getRotorSpeed()))) .. " RPM   ")
-        mon.setCursorPos(2, 15)
+        mon.setCursorPos(2, 16)
         mon.write("RF-Produktion: " .. (input.formatNumber(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
     elseif lang == "en" then
         mon.write("Rotor Speed: ")
         mon.write((input.formatNumberComma(math.floor(t[turbine].getRotorSpeed()))) .. " RPM    ")
-        mon.setCursorPos(2, 15)
+        mon.setCursorPos(2, 16)
         mon.write("RF-Production: " .. (input.formatNumberComma(math.floor(t[turbine].getEnergyProducedLastTick()))) .. " RF/t           ")
     end
 
     --Internal buffer of the turbine
-    mon.setCursorPos(2, 16)
+    mon.setCursorPos(2, 17)
     if lang == "de" then
         mon.write("Interne Energie: ")
         mon.write(input.formatNumber(math.floor(getTurbineEnergy(turbine))) .. " RF          ")
