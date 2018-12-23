@@ -908,7 +908,7 @@ function printStatsAuto(turbine)
             mon.setTextColor(colors.green)
             mon.write("Gut")
         else 
-            mon.setCursorPos(35, 15)
+            mon.setCursorPos(30, 15)
             mon.setTextColor(colors.red)
             mon.write("Overspeed")
         end
