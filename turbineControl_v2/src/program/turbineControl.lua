@@ -32,7 +32,6 @@ local currStat = 0
 local lastSpeed = {}
 local currSpeed = {}
 local speedFailCounter = {}
-turbineTargetSpeed = 1820
 
 --Button renaming
 if lang == "de" then
@@ -634,7 +633,7 @@ end
 --Returns true if all turbines are at targetSpeed
 function allAtTargetSpeed()
     for i = 0, amountTurbines do
-        if t[i].getRotorSpeed() < turbineTargetSpeed then
+        if t[i].getRotorSpeed() <= turbineTargetSpeed then
             return false
         end
     end
