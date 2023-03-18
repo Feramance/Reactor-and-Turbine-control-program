@@ -20,7 +20,7 @@ The following list shows the features of the program:
 - Type in the following into the computer:
 
     ```
-    pastebin get HMtbgkwt git
+    pastebin get bSa22RNT git
     git
     ```
         
