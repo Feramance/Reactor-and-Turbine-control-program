@@ -32,6 +32,7 @@ local currStat = 0
 local lastSpeed = {}
 local currSpeed = {}
 local speedFailCounter = {}
+turbineTargetSpeed = 1820
 
 --Button renaming
 if lang == "de" then
