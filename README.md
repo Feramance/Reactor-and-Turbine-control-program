@@ -20,8 +20,7 @@ The following list shows the features of the program:
 - Type in the following into the computer:
 
     ```
-    pastebin get bSa22RNT git
-    git
+    pastebin run bSa22RNT
     ```
         
 - Then follow the install instructions

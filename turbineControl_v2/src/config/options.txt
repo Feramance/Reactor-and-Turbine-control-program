@@ -8,7 +8,7 @@
   reactorOnAt = 75,
   targetSteam = 2000,
   turbineTargetSpeed = 1820,
-  version = "2.7.0-beta",
+  version = "2.7.1-beta",
   textColor = 1,
   program = "turbine",
   turbineOnOff = "off",
