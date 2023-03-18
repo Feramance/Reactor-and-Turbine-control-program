@@ -630,71 +630,9 @@ function getToTargetSpeed()
     end
 end
 
-
---===== Initialization of all peripherals =====
-
-function initPeripherals()
-	--Get all peripherals
-	local peripheralList = peripheral.getNames()
-	for i = 1, #peripheralList do
-		--Turbines
-		if peripheral.getType(peripheralList[i]) == "BigReactors-Turbine" then
-			t[amountTurbines] = peripheral.wrap(peripheralList[i])
-			amountTurbines = amountTurbines + 1
-			--Reactor
-		elseif peripheral.getType(peripheralList[i]) == "BigReactors-Reactor" then
-			r = peripheral.wrap(peripheralList[i])
-			--Monitor & Touchpoint
-		elseif peripheral.getType(peripheralList[i]) == "monitor" then
-			mon = peripheral.wrap(peripheralList[i])
-			touchpointLocation = peripheralList[i]
-			--Capacitorbank / Energycell / Energy Core
-		else
-			local tmp = peripheral.wrap(peripheralList[i])
-			local stat,err = pcall(function() tmp.getEnergyStored() end)
-			if stat then
-				v = tmp
-			end
-		end
-	end
-
-	--Check for errors
-	term.clear()
-	term.setCursorPos(1,1)
-	--No Monitor
-	if mon == "" then
-		if lang == "de" then
-			error("Monitor nicht gefunden!\nBitte pruefen und den Computer neu starten (Strg+R gedrueckt halten)")
-		elseif lang == "en" then
-			error("Monitor not found!\nPlease check and reboot the computer (Press and hold Ctrl+R)")
-		end
-	end
-	--Monitor clear
-	mon.setBackgroundColor(colors.black)
-	mon.setTextColor(colors.red)
-	mon.clear()
-	mon.setCursorPos(1,1)
-	--Monitor too small
-	local monX,monY = mon.getSize()
-	if monX < 71 or monY < 26 then
-		if lang == "de" then
-			mon.write("Monitor zu klein.\nBitte min. 7 breit und 4 hoch bauen und den Computer neu starten\n(Strg+R gedrueckt halten)")
-			error("Monitor zu klein.\nBitte min. 7 breit und 4 hoch bauen und den Computer neu starten\n(Strg+R gedrueckt halten)")
-		elseif lang == "en" then
-			mon.write("Monitor too small\n Must be at least 7 in length and 4 in height.\nPlease check and reboot the computer (Press and hold Ctrl+R)")
-			error("Monitor too small.\nMust be at least 7 in length and 4 in height.\nPlease check and reboot the computer (Press and hold Ctrl+R)")
-		end
-	end
-
-	amountTurbines = amountTurbines - 1
-end
-
 --Returns true if all turbines are at targetSpeed
 function allAtTargetSpeed()
     for i = 0, amountTurbines do
-        if t[i] ~= nil then
-            initPeripherals()
-        end
         if t[i].getRotorSpeed() < turbineTargetSpeed then
             return false
         end

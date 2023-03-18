@@ -16,7 +16,7 @@ mainMenu = ""
 lang = ""
 overallMode = ""
 program = ""
-turbineTargetSpeed = 0
+turbineTargetSpeed = 1820
 targetSteam = 0
 turbineOnOff = ""
 --Peripherals
